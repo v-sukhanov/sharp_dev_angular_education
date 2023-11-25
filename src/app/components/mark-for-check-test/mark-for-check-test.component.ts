@@ -12,7 +12,7 @@ export class MarkForCheckTestComponent implements OnInit, AfterViewInit{
   test = 2;
 
   get name() {
-    console.log('check on changes')
+    console.warn('MarkForCheckTestComponent check')
     return 'name';
   }
 
@@ -22,25 +22,28 @@ export class MarkForCheckTestComponent implements OnInit, AfterViewInit{
   }
 
   ngOnInit() {
-
+    // timer(1000)
+    //     .subscribe(() => {
+    //       this.test = 1000;
+    //     })
 
   }
 
   ngAfterViewInit() {
-    of(null)
-        .subscribe(() => {
-          console.log(-1)
-          this.test = -1;
-          this._cdRef.markForCheck()
-        })
-    of(null)
-        .pipe(
-            delay(5000)
-        )
-        .subscribe(() => {
-          console.log(3)
-          this.test = 3;
-          this._cdRef.markForCheck()
-        })
+    // of(null)
+    //     .subscribe(() => {
+    //       console.log(-1)
+    //       this.test = -1;
+    //       this._cdRef.markForCheck()
+    //     })
+    // of(null)
+    //     .pipe(
+    //         delay(5000)
+    //     )
+    //     .subscribe(() => {
+    //       console.log(3)
+    //       this.test = 3;
+    //       this._cdRef.markForCheck()
+    //     })
   }
 }
