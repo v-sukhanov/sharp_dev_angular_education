@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, computed, effect, signal } from '@angular/core';
 import { interval, timer } from 'rxjs';
 
 @Component({
@@ -10,11 +10,18 @@ import { interval, timer } from 'rxjs';
 export class SignalsTestComponent implements AfterViewInit{
 	items = [{ name: 'Product A', price: 10 }, { name: 'Product B', price: 15 }, { name: 'Product C', price: 20 },];
 
+
 	itemList = signal(this.items);
 
 	totalPrice = computed(() => {
 		return this.itemList().reduce((acc, curr) => acc + curr.price, 0);
 	});
+
+	constructor() {
+		effect(() => {
+			console.log(`The totalPrice is: ${this.totalPrice()}`);
+		});
+	}
 
 	removeItem(item: any) {
 		this.itemList.set(this.itemList().filter((i) => i !== item));
