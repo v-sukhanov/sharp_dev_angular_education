@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { delay, of } from 'rxjs';
 
 @Component({
@@ -13,6 +13,8 @@ export class AppAppMarkForCheckTestChild2Component implements OnInit{
     return 'name';
   }
   test = 4
+
+  @Output() clicked = new EventEmitter<void>();
 
   constructor(
       private _cdRef: ChangeDetectorRef
@@ -38,6 +40,6 @@ export class AppAppMarkForCheckTestChild2Component implements OnInit{
   }
 
   onClick() {
-
+    this.clicked.emit();
   }
 }

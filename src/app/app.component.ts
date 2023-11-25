@@ -7,5 +7,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'project';
+  get title() {
+    console.warn('title check')
+    return  'project';
+  }
 }

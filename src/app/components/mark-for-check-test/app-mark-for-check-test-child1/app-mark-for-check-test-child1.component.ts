@@ -20,19 +20,23 @@ export class AppMarkForCheckTestChild1Component implements OnInit, DoCheck{
 
 
   ngOnInit() {
-    of(null)
-        .pipe(
-            delay(3000)
-        )
-        .subscribe(() => {
-          this.test = 2313123;
-          this._cdRef.detectChanges();
-          // this._cdRef.detectChanges();
-          // this._cdRef.markForCheck()
-        })
+    // of(null)
+    //     .pipe(
+    //         delay(3000)
+    //     )
+    //     .subscribe(() => {
+    //       this.test = 2313123;
+    //       this._cdRef.detectChanges();
+    //       // this._cdRef.detectChanges();
+    //       // this._cdRef.markForCheck()
+    //     })
   }
 
   ngDoCheck() {
     // console.log('AppMarkForCheckTestChild1Component ngDoCheck')
+  }
+
+  onClick() {
+
   }
 }
