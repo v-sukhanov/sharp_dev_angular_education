@@ -1,4 +1,12 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, computed, effect, signal } from '@angular/core';
+import {
+	afterRender,
+	AfterViewInit,
+	ChangeDetectionStrategy,
+	Component,
+	computed,
+	effect,
+	signal
+} from '@angular/core';
 import { interval, timer } from 'rxjs';
 
 @Component({
@@ -18,6 +26,9 @@ export class SignalsTestComponent implements AfterViewInit{
 	});
 
 	constructor() {
+		afterRender(() => {
+			console.log('render!')
+		})
 		effect(() => {
 			console.log(`The totalPrice is: ${this.totalPrice()}`);
 		});
