@@ -8,6 +8,7 @@ import { MarkForCheckTestComponent } from './components/mark-for-check-test/mark
 import { AppMarkForCheckTestChild1Component } from './components/mark-for-check-test/app-mark-for-check-test-child1/app-mark-for-check-test-child1.component';
 import { AppAppMarkForCheckTestChild2Component } from './components/mark-for-check-test/app-mark-for-check-test-child1/app-app-mark-for-check-test-child2/app-app-mark-for-check-test-child2.component';
 import { SignalsTestComponent } from './components/signals-test/signals-test.component';
+import { ParamsFromInputTestComponent } from './components/params-from-input-test/params-from-input-test.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SignalsTestComponent } from './components/signals-test/signals-test.com
     MarkForCheckTestComponent,
     AppMarkForCheckTestChild1Component,
     AppAppMarkForCheckTestChild2Component,
-    SignalsTestComponent
+    SignalsTestComponent,
+    ParamsFromInputTestComponent
   ],
   imports: [
     BrowserModule,
