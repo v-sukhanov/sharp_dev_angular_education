@@ -21,6 +21,9 @@ import { BookCollectionComponent } from './components/ngrx-test/ngrx-test-books/
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { BooksEffects } from './components/ngrx-test/ngrx-test-books/effects/books.effects';
+import { NgrxRouterTestComponent } from './components/ngrx-router-test/ngrx-router-test.component';
+import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { reducer } from './components/ngrx-router-test/store/car.reducer';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { BooksEffects } from './components/ngrx-test/ngrx-test-books/effects/boo
     NgrxTestBooksComponent,
     BooksListComponent,
     BookCollectionComponent,
+    NgrxRouterTestComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,8 @@ import { BooksEffects } from './components/ngrx-test/ngrx-test-books/effects/boo
       books: booksReducer,
       collection: collectionReducer
     }),
+    StoreModule.forRoot({ cars: reducer, router: routerReducer }),
+    StoreRouterConnectingModule.forRoot(),
       HttpClientModule
   ],
   providers: [],
