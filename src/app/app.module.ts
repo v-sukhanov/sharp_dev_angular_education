@@ -39,6 +39,8 @@ import { NGXS_LOGGER_PLUGIN_OPTIONS, NgxsLoggerPluginModule } from '@ngxs/logger
 import { ResetAction } from './components/ngxs-test/store/counter.actions';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { NgxsMappedSubStatesComponent } from './components/ngxs-mapped-sub-states/ngxs-mapped-sub-states.component';
+import { ZooState } from './components/ngxs-mapped-sub-states/store/zoo.state';
 
 
 
@@ -58,6 +60,7 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 		BookCollectionComponent,
 		NgrxRouterTestComponent,
 		NgxsTestComponent,
+  NgxsMappedSubStatesComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -72,7 +75,8 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 		}),
 		StoreModule.forRoot({ cars: reducer, router: routerReducer }),
 		NgxsModule.forRoot([
-			CounterState
+			CounterState,
+			ZooState
 		]),
 		NgxsLoggerPluginModule.forRoot({
 			collapsed: false,
